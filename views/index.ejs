@@ -1,3 +1,64 @@
 <%- include('./partials/header.ejs') %>
+<% 
+let currentDate = new Date();
+const formatter = new Intl.RelativeTimeFormat();
+%>
+<div class="container col-sm-12">
+    <div class="card-block">
+        <div class="row">
+            <div class="col-md-4 card border border-secondary hashtag-column" id="hashtags-count">
+                <h1>Trending Clucks</h1>
+                <% for (let hashtag of hashtags) { %>
+                    <p><%= hashtag.tag%> • <%= hashtag.count%></p>
+                <% } %>
+            </div>
+        <div class="col-md-8">
+<% for (let cluck of clucks) { %>
 
+<% 
+//calculate time
+let timestring = "";
+const year = 24 * 60 * 60 * 1000 * 365;
+const day = 24 * 60 * 60 * 1000;
+const hour =  60 * 60 * 1000;
+const minute = 60 * 1000;
+const deltaTime = cluck.created_at.getTime() - Date.now();
+if (deltaTime > -60000) {
+    timestring = "Just now"
+} else {
+    if (deltaTime <= -year) {
+        timestring = formatter.format(parseInt(deltaTime/year), "year")
+    } else if (deltaTime <= -day) {
+        timestring = formatter.format(parseInt(deltaTime/day), "day")
+    } else if (deltaTime <= -hour) {
+        timestring = formatter.format(parseInt(deltaTime/hour), "hour")
+    } else if (deltaTime <= -minute) {
+        timestring = formatter.format(parseInt(deltaTime/minute), "minute")
+    }
+}
+%>
+                <div class="card border border-secondary mb-3 rounded col-md-8 cluck-box">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2">
+                                <img src="../images/Chicken_icon_05.svg" class="chicken-profile">
+                            </div>
+                            <div class="col-sm-10 col-md-6">
+                                <p class="text-secondary font-weight-bold"><%= cluck.username%> • <%= timestring%></p>
+            
+                                <p><%= cluck.content%></p>
+                                <% if (cluck.image_url) { %>
+                                    <img class="cluck-image"src="<%= cluck.image_url%>">
+                                <% } %>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <%- include('./partials/footer.ejs') %>

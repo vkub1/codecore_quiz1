@@ -20,11 +20,7 @@ app.use((req,res, next) => {
 })
 
 app.get('/', (req, res) => {
-    if (req.cookies.username) {
-        res.render('index')
-    } else {
-        res.redirect('/signin')
-    }
+   res.redirect('/clucks')
 })
 
 app.get('/signin', (req, res) => {

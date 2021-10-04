@@ -18,6 +18,8 @@
 main {
     display: flex;
     margin: 1%;
+    flex-direction: row;
+
 }
 
 #sign-in-button {
@@ -34,6 +36,34 @@ main {
     flex-direction: column;
     justify-content: center;
 }
+
+.chicken-profile {
+    width: 100%;
+    height: 100px;
+}
+
+.cluck-image {
+    width: 100%;
+}
+
+#hashtags-count {
+    height: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hashtags-count {
+        display: none;
+    }
+}
+
+
+
+
 
 
 
