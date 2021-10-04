@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light border border-bottom border-secondary">
+        <a class="navbar-brand" href="/"><img id="chicken-icon" src="../../images/128px-Twemoji_1f413.svg.png"></a>
+        <ul class="nav ml-auto ">
+            <li class="nav-item">
+                <a class="nav-link btn btn-secondary font-weight-bold" href="/clucks/new">Cluck!</a>
+            </li>
+            <% if (username) { %>
+                <li class="nav-item" id="signed-in-name">
+                    <div class="text-secondary font-weight-bold"><%= username%></div>
+                </li>
+                <form action="/sign_out" method="POST">
+                    <li class="nav-item">
+                        <button type="submit" class='btn btn-secondary'>Sign Out</button>
+                </li>
+                </form>
+            <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link btn btn-secondary font-weight-bold" href="/signin">Sign In</a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+    <main>

@@ -1,0 +1,74 @@
+#chicken-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.nav-item {
+    margin-left: 10px
+}
+
+#sign-in-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    border-radius: 2%;
+}
+
+
+main {
+    display: flex;
+    margin: 1%;
+    flex-direction: row;
+
+}
+
+#sign-in-button {
+    margin-top: 1%;
+    align-self: flex-end;
+}
+
+#sign-in-text {
+    padding: 0 3vw;
+}
+
+#signed-in-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chicken-profile {
+    width: 100%;
+    height: 100px;
+}
+
+.cluck-image {
+    width: 100%;
+}
+
+#hashtags-count {
+    height: fit-content;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hashtags-count {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
