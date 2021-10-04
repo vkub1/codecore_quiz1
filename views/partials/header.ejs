@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1</title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.2.1.slim.min.js" charset="utf-8"></script>
+    <script src="/js/popper.min.js" charset="utf-8"></script>
+    <script src="/js/bootstrap.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light border border-bottom border-secondary">
+        <img class="navbar-brand" id="chicken-icon" src="../../images/128px-Twemoji_1f413.svg.png">
+        <ul class="nav ml-auto ">
+            <li class="nav-item">
+                <a class="nav-link btn btn-secondary font-weight-bold" href="/">Cluck!</a>
+            </li>
+            <% if (username) { %>
+                <li class="nav-item" id="signed-in-name">
+                    <div class="text-secondary font-weight-bold"><%= username%></div>
+                </li>
+                <form action="/sign_out" method="POST">
+                    <li class="nav-item">
+                        <button type="submit" class='btn btn-secondary'>Sign Out</button>
+                </li>
+                </form>
+            <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link btn btn-secondary font-weight-bold" href="/signin">Sign In</a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+    <main>

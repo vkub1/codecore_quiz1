@@ -1,0 +1,44 @@
+#chicken-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.nav-item {
+    margin-left: 10px
+}
+
+#sign-in-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    border-radius: 2%;
+}
+
+
+main {
+    display: flex;
+    margin: 1%;
+}
+
+#sign-in-button {
+    margin-top: 1%;
+    align-self: flex-end;
+}
+
+#sign-in-text {
+    padding: 0 3vw;
+}
+
+#signed-in-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
