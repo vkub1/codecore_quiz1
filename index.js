@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const clucksRouter = require('./routes/clucks');
 
 const logger = require('morgan');
 const path = require('path');
@@ -45,7 +46,7 @@ app.post('/sign_out', (req, res) => {
 })
 
 
-
+app.use('/clucks', clucksRouter);
 const PORT = 3000;
 const DOMAIN = 'localhost';
 app.listen(PORT, DOMAIN, function () {
